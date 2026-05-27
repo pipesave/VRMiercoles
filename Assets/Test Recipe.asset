@@ -15,4 +15,4 @@ MonoBehaviour:
   ingredients:
   - Ingrediente1
   - Ingrediente2
-  shader: {fileID: 0}
+  mesh: {fileID: -606419294924500904, guid: aa399527bf6168c4282c23ad13609179, type: 3}

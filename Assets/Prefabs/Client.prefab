@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5720870187100738197}
   - component: {fileID: 544188891165363101}
   - component: {fileID: 2830507363564552884}
+  - component: {fileID: -4421886839711846310}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -62,13 +63,10 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3e6fd95f7fb56814ab88fc65b1e366a3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,11 +84,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &544188891165363101
 CapsuleCollider:
@@ -129,3 +125,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PathFollower
   speed: 5
   minDistance: 0.1
+--- !u!114 &-4421886839711846310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4362983283535898310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4157c65f5719dd947b9271b6832ee008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Client
+  pathFollower: {fileID: 2830507363564552884}
+  order: {fileID: 11400000, guid: 1c698fe734278bf45a01a5b0df372b51, type: 2}
