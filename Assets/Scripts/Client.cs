@@ -7,7 +7,23 @@ public class Client : MonoBehaviour
     [SerializeField] private PathFollower pathFollower;
     [SerializeField] private Order order;
 
-    private ClientManager clientPositionAssigner;
+    [Space]
+
+    [SerializeField] private float waitTime = 15f;
+
+    private ClientManager clientManager;
+
+    private ClientState state = ClientState.Idle;
+
+    private float timer = 0f;
+
+    private enum ClientState
+    {
+        Idle,
+        ToCounter,
+        Ordering,
+        Leaving
+    }
 
     public void MoveToNextPositionInRow(ClientManager.Path path)
     {
@@ -17,23 +33,37 @@ public class Client : MonoBehaviour
     public bool FullfilledOrder(List<Potion> potions)
     {
         bool result = order.IsOrder(potions);
-        if (result) Destroy(gameObject);
+        if (result) Leave();
         return result;
     }
 
     private void Awake()
     {
-        clientPositionAssigner = FindFirstObjectByType<ClientManager>();
+        clientManager = FindFirstObjectByType<ClientManager>();
     }
 
     private void Start()
     {
-        SetPath(clientPositionAssigner.GetPath(this), OnCounterReached);
+        SetPath(clientManager.GetPath(this), OnCounterReached);
+        state = ClientState.ToCounter;
+    }
+
+    private void Update()
+    {
+        if (state != ClientState.Ordering) return;
+
+        timer += Time.deltaTime;
+
+        if (timer > waitTime)
+        {
+            state = ClientState.Leaving;
+            Leave();
+        }
     }
 
     private void OnDestroy()
     {
-        clientPositionAssigner.FreePosition(this);
+        clientManager.FreePosition(this);
     }
 
     private void SetPath(ClientManager.Path path, Action callback)
@@ -44,6 +74,16 @@ public class Client : MonoBehaviour
 
     private void OnCounterReached()
     {
-        Debug.Log($"First in row: {clientPositionAssigner.IsFirstInRow(this)}");
+        state = ClientState.Ordering;
+    }
+
+    private void Leave()
+    {
+        SetPath(clientManager.GetLeavePath(), OnLeft);
+    }
+
+    private void OnLeft()
+    {
+        Debug.Log("left");
     }
 }

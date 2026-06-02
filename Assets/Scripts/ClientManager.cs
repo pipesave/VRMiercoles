@@ -5,6 +5,7 @@ using System;
 public class ClientManager : MonoBehaviour
 {
     [SerializeField] private List<RowPath> paths = new List<RowPath>();
+    [SerializeField] private List<Transform> leavePath = new List<Transform>();
 
     public class Path
     {
@@ -18,6 +19,8 @@ public class ClientManager : MonoBehaviour
             Points = points;
         }
     }
+
+    public Path GetLeavePath() => new Path(leavePath);
 
     public void OnOrderUpdated(OrderReader reader, List<Potion> potions)
     {

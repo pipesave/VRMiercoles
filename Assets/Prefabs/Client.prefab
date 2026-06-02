@@ -139,3 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Client
   pathFollower: {fileID: 2830507363564552884}
   order: {fileID: 11400000, guid: 1c698fe734278bf45a01a5b0df372b51, type: 2}
+  waitTime: 4
