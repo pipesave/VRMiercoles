@@ -6,6 +6,8 @@ public class Order : ScriptableObject
 {
     [SerializeField] private List<Recipe> recipes;
 
+    public List<Recipe> Recipes => recipes;
+
     public bool IsOrder(List<Recipe> recipes)
     {
         for (int i = 0; i < this.recipes.Count; i++)

@@ -5,13 +5,16 @@ using UnityEngine;
 public class Client : MonoBehaviour
 {
     [SerializeField] private PathFollower pathFollower;
-    [SerializeField] private Order order;
 
     [Space]
 
     [SerializeField] private float waitTime = 15f;
 
+    public float PatiencePercentage => Mathf.Clamp01(timer / waitTime);
+
     private ClientManager clientManager;
+
+    private Order order;
 
     private ClientState state = ClientState.Idle;
 
@@ -23,6 +26,11 @@ public class Client : MonoBehaviour
         ToCounter,
         Ordering,
         Leaving
+    }
+
+    public void SetOrder(Order order)
+    {
+        this.order = order;
     }
 
     public void MoveToNextPositionInRow(ClientManager.Path path)
@@ -84,6 +92,7 @@ public class Client : MonoBehaviour
 
     private void OnLeft()
     {
-        Debug.Log("left");
+        Destroy(gameObject);
+        GameManager.
     }
 }

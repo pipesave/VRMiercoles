@@ -4,6 +4,8 @@ using System;
 
 public class ClientManager : MonoBehaviour
 {
+    [SerializeField] private GameObject clientPrefab;
+    [SerializeField] private Transform spawnpoint;
     [SerializeField] private List<RowPath> paths = new List<RowPath>();
     [SerializeField] private List<Transform> leavePath = new List<Transform>();
 
@@ -21,6 +23,11 @@ public class ClientManager : MonoBehaviour
     }
 
     public Path GetLeavePath() => new Path(leavePath);
+
+    public void SpawnClient()
+    {
+        Instantiate(clientPrefab, spawnpoint.position, Quaternion.identity);
+    }
 
     public void OnOrderUpdated(OrderReader reader, List<Potion> potions)
     {
