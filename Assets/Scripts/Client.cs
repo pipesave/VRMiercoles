@@ -93,6 +93,6 @@ public class Client : MonoBehaviour
     private void OnLeft()
     {
         Destroy(gameObject);
-        GameManager.
+        GameManager.IncreaseFails();
     }
 }

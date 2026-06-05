@@ -16,9 +16,9 @@ public class GameManager : Singleton<GameManager>
 
     private int fails = 0;
 
-    public void IncreaseFails()
+    public static void IncreaseFails()
     {
-        fails += 1;
+        Instance.fails += 1;
     }
 
     private void Update()
