@@ -341,10 +341,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf3e8408ea175c4193dc166ccc65745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreTracker: {fileID: 11400000, guid: 36f10fcebc3e8754a868550539c96953, type: 2}
   clientManager: {fileID: 230438340}
   worldCanvas: {fileID: 1306224317}
   maxFails: 5
   clientSpawnCooldown: 5
+  onGameOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &182170572
 Transform:
   m_ObjectHideFlags: 0

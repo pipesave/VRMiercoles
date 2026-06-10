@@ -5,6 +5,7 @@ using UnityEngine;
 public class Order : ScriptableObject
 {
     [SerializeField] private List<Recipe> recipes;
+    [field: SerializeField] public int Score { get; private set; } = 10;
 
     public List<Recipe> Recipes => recipes;
 

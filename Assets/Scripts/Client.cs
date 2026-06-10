@@ -5,6 +5,7 @@ using UnityEngine;
 public class Client : MonoBehaviour
 {
     [SerializeField] private PathFollower pathFollower;
+    [SerializeField] private ScoreTracker scoreTracker;
 
     [Space]
 
@@ -43,6 +44,11 @@ public class Client : MonoBehaviour
         bool result = order.IsOrder(potions);
         if (result) Leave();
         return result;
+    }
+
+    public void IncreaseScore()
+    {
+        scoreTracker.IncreaseScore(order.Score);
     }
 
     private void Awake()

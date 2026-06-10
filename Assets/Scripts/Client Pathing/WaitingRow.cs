@@ -13,7 +13,11 @@ public class WaitingRow : MonoBehaviour
     {
         if (rowPositions.Count == 0) return false;
         Debug.Log("updated order");
-        return rowPositions[0].client.FullfilledOrder(potions);
+
+        bool state = rowPositions[0].client.FullfilledOrder(potions);
+        if (state) rowPositions[0].client.IncreaseScore();
+
+        return state;
     }
 
     public bool IsFirstInRow(Client client)
