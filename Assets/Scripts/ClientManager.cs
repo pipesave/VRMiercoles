@@ -88,6 +88,7 @@ public class ClientManager : MonoBehaviour
         {
             points.Add(lessOccupiedPath.turningPoint);
             points.Add(lessOccupiedPath.waitingRow.ClaimFreePosition(client));
+            lessOccupiedPath.waitingRow.OrderFinished(lessOccupiedPath.orderReader.Potions);
         }
 
         return new Path(points);

@@ -7,6 +7,8 @@ public class OrderReader : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private List<Potion> potions = new List<Potion>(MAX_ORDER_SIZE);
 
+    public List<Potion> Potions => potions;
+
     public Action<OrderReader, List<Potion>> onOrderUpdated;
 
     private const int MAX_ORDER_SIZE = 8;

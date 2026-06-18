@@ -12,6 +12,8 @@ public class WaitingRow : MonoBehaviour
     public bool OrderFinished(List<Potion> potions)
     {
         if (rowPositions.Count == 0) return false;
+        if (rowPositions[0].client == null) return false;
+
         Debug.Log("updated order");
 
         bool state = rowPositions[0].client.FullfilledOrder(potions);

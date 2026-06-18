@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Client
   pathFollower: {fileID: 2830507363564552884}
   scoreTracker: {fileID: 11400000, guid: 36f10fcebc3e8754a868550539c96953, type: 2}
-  waitTime: 4
+  waitTime: 15
 --- !u!114 &5050744045723357195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,5 +157,4 @@ MonoBehaviour:
   orderWindow: {fileID: 1002658313268005653, guid: cb15876fea6e6144d9440046f5ddb905, type: 3}
   potionWindow: {fileID: 7185835070541548592, guid: 1f99a0846c83c12498618e04a3fd4ba9, type: 3}
   timerWindow: {fileID: -1853441835257628232, guid: 963a54290614d4049af478f08c6f8274, type: 3}
-  order: {fileID: 11400000, guid: 1c698fe734278bf45a01a5b0df372b51, type: 2}
   windowOffset: {x: 0, y: 1.75, z: 0}
