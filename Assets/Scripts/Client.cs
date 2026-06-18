@@ -13,6 +13,8 @@ public class Client : MonoBehaviour
 
     public float PatiencePercentage => Mathf.Clamp01(timer / waitTime);
 
+    public Order Order => order;
+
     private ClientManager clientManager;
 
     private Order order;

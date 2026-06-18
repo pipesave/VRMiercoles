@@ -16,8 +16,6 @@ public class ClientOrderController : MonoBehaviour
 
     [Space]
 
-    [Tooltip("Not random yet, should be a list of orders, that get updated according to current difficulty")]
-    [SerializeField] private Order order;
     [SerializeField] private Vector3 windowOffset;
 
     private UIWindow windowInstance;
@@ -25,7 +23,7 @@ public class ClientOrderController : MonoBehaviour
 
     private void Awake()
     {
-        client.SetOrder(order);
+        client.SetOrder(GameManager.GetRandomOrder());
     }
 
     private void Start()
@@ -52,7 +50,7 @@ public class ClientOrderController : MonoBehaviour
 
         Transform root = windowInstance.TryGetElement<LayoutGroup>("Layout Group").transform;
 
-        for (int i = 0; i < order.Recipes.Count; i++)
+        for (int i = 0; i < client.Order.Recipes.Count; i++)
         {
             UIWindow newPotionWindow = Instantiate(potionWindow, root);
             //set sprite of order.Recipes[i] to window

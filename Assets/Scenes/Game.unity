@@ -345,10 +345,20 @@ MonoBehaviour:
   clientManager: {fileID: 230438340}
   worldCanvas: {fileID: 1306224317}
   maxFails: 5
-  clientSpawnCooldown: 5
+  clientSpawnCooldown: 15
+  difficultyScaleRate: 0.1
+  startOrders:
+  - {fileID: 11400000, guid: 1c698fe734278bf45a01a5b0df372b51, type: 2}
+  updates:
+  - difficulty: 0.5
+    recipes:
+    - {fileID: 11400000, guid: f58633ed7d5d92148ae5fd270acf30b6, type: 2}
   onGameOver:
     m_PersistentCalls:
       m_Calls: []
+  ordersPool: []
+  addedUpdates: []
+  currentDifficulty: 0
 --- !u!4 &182170572
 Transform:
   m_ObjectHideFlags: 0
